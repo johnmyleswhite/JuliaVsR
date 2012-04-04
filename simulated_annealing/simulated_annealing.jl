@@ -1,11 +1,3 @@
-function log_temperature(i)
-  1 / log(i)
-end
-
-function constant_temperature(i)
-  0.1
-end
-
 # simulated_annealing
 # Arguments:
 # * cost: Function from states to the real numbers. Often called an energy function, but this algorithm works for both positive and negative costs.
@@ -16,13 +8,13 @@ end
 # * keep_best: Do we return the best state visited or the last state visisted? (Should default to true.)
 # * trace: Do we show a trace of the system's evolution?
 
-function simulated_annealing(cost,
-                             s0,
-                             neighbor,
-                             temperature,
-                             iterations,
-                             keep_best,
-                             trace)
+function simulated_annealing(cost::Function,
+                             s0::Any,
+                             neighbor::Function,
+                             temperature::Function,
+                             iterations::Int64,
+                             keep_best::Bool,
+                             trace::Bool)
                              
   # Set our current state to the specified intial state.
   s = s0
@@ -34,18 +26,22 @@ function simulated_annealing(cost,
   for i = 1:iterations
     t = temperature(i)
     s_n = neighbor(s)
-    if trace println("$i: s = $s") end
-    if trace println("$i: s_n = $s_n") end
     y = cost(s)
     y_n = cost(s_n)
+    
+    if trace println("$i: s = $s") end
+    if trace println("$i: s_n = $s_n") end
     if trace println("$i: y = $y") end
     if trace println("$i: y_n = $y_n") end
+    
     if y_n <= y
       s = s_n
       if trace println("Accepted") end
     else
       p = exp(- ((y_n - y) / t))
+      
       if trace println("$i: p = $p") end
+      
       if rand() <= p
         s = s_n
         if trace println("Accepted") end
@@ -54,10 +50,12 @@ function simulated_annealing(cost,
         if trace println("Rejected") end
       end
     end
-    if trace println() end
+    
     if cost(s) < cost(best_s)
       best_s = s
     end
+    
+    if trace println() end
   end
   
   if keep_best
@@ -65,4 +63,13 @@ function simulated_annealing(cost,
   else
     s
   end
+end
+
+# Off-the-shelf cooling schedules
+function log_temperature(i)
+  1 / log(i)
+end
+
+function constant_temperature(i)
+  1
 end
