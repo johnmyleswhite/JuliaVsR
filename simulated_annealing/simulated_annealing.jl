@@ -13,7 +13,7 @@ end
 # * neighbor: Function from states to states. Produces what the Metropolis algorithm would call a proposal.
 # * temperature: Function specifying the temperature at time i.
 # * iterations: How many iterations of the algorithm should be run? This is the only termination condition.
-# * keep_best: Do return the best state visited the or the last state visisted? (Should default to true.)
+# * keep_best: Do we return the best state visited or the last state visisted? (Should default to true.)
 # * trace: Do we show a trace of the system's evolution?
 
 function simulated_annealing(cost,
