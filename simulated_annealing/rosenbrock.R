@@ -12,7 +12,7 @@ library('ggplot2')
 ggplot(values, aes(x = x, y = y)) +
   geom_tile(aes(fill = log1p(v))) +
   geom_point(data = solutions, aes(x = x, y = y, color = 'red')) +
-  geom_hline(yintercept = 1, color = 'grey') +
-  geom_vline(xintercept = 1, color = 'grey') +
+  geom_hline(yintercept = 1, color = 'grey', alpha = 0.25) +
+  geom_vline(xintercept = 1, color = 'grey', alpha = 0.25) +
   opts(legend.position = 'none')
 ggsave('rosenbrock.png')
