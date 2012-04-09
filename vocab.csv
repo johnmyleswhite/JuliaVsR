@@ -2,7 +2,7 @@ R,Julia,Category,Subcategory
 https://github.com/hadley/devtools/wiki/vocabulary,http://julialang.org/manual/standard-library-reference/,Resources,Vocabulary
 ?,help,Basics,First Functions
 str,,Basics,First Functions
-%in%,,Basics,Operators
+%in%,contains,Basics,Operators
 match,,Basics,Operators
 =,=,Basics,Operators
 <-,=,Basics,Operators
@@ -26,11 +26,11 @@ identical,,Basics,Comparison
 <,<,Basics,Comparison
 <=,<=,Basics,Comparison
 is.na,,Basics,Comparison
-is.nan,,Basics,Comparison
-is.finite,,Basics,Comparison
+is.nan,isnan,Basics,Comparison
+is.finite,isfinite,Basics,Comparison
 complete.cases,,Basics,Comparison
-*,*,Basics,Basic Math
-+,+,Basics,Basic Math
+*,* (*.),Basics,Basic Math
++,+ (+.),Basics,Basic Math
 -,-,Basics,Basic Math
 /,/,Basics,Basic Math
 ^,^,Basics,Basic Math
@@ -225,7 +225,7 @@ traceback,,Working with R,Debugging
 browser,,Working with R,Debugging
 recover,,Working with R,Debugging
 options(error =),,Working with R,Debugging
-stop,,Working with R,Debugging
+stop,error,Working with R,Debugging
 warning,,Working with R,Debugging
 message,,Working with R,Debugging
 tryCatch,try/catch,Working with R,Debugging
@@ -283,8 +283,8 @@ gsub,,Special Data,Character Manipulation
 strsplit,split,Special Data,Character Manipulation
 chartr,,Special Data,Character Manipulation
 nchar,strlen,Special Data,Character Manipulation
-tolower,,Special Data,Character Manipulation
-toupper,,Special Data,Character Manipulation
+tolower,lowercase,Special Data,Character Manipulation
+toupper,uppercase,Special Data,Character Manipulation
 substr,,Special Data,Character Manipulation
 paste,join,Special Data,Character Manipulation
 library(stringr),,Special Data,Character Manipulation
