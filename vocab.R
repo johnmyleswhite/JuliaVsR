@@ -14,7 +14,8 @@ library(ascii)
 base.readme <- "Pieces of code that can be used to compare Julia and R side-by-side for speed and interpretability."
 
 # Generate Markdown for table
-vocab.md <- capture.output(print(ascii(vocab[2:nrow(vocab),], include.rownames=F)))
+vocab.md <- capture.output(print(ascii(vocab[2:nrow(vocab),], include.rownames=F), 
+                                 type="textile"))
 vocab.md <- paste(vocab.md, collapse="\n")
 
 readme.file <- file('README.md', open="w")
