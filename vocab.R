@@ -16,11 +16,12 @@ base.readme <- "Pieces of code that can be used to compare Julia and R side-by-s
 # Generate Markdown for table
 vocab.md <- capture.output(print(ascii(vocab[2:nrow(vocab),], include.rownames=F, colnames=NULL), 
                                  type="org"))
-vocab[2] <- gsub("+","|", vocab.md[2])
+vocab.md[2] <- gsub("[+]","|", vocab.md[2])
 
 vocab.md <- paste(vocab.md, collapse="\n")
 
 readme.file <- file('README.md', open="w")
+writeLines(base.readme, readme.file, sep="\n\n")
 writeLines(vocab.md, readme.file)
 close(readme.file)
 
