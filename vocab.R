@@ -7,3 +7,22 @@ HTML(vocab,
 	 decimal.mark = ",",
 	 row.names = FALSE)
 # Post-process to escape ampersands, remove HTML cruft and tidy HTML.
+
+# Add table to the README.md so things render directly to Github page
+library(ascii)
+
+base.readme <- "Pieces of code that can be used to compare Julia and R side-by-side for speed and interpretability."
+
+# Generate Markdown for table
+vocab.md <- capture.output(print(ascii(vocab[2:nrow(vocab),], include.rownames=F, colnames=NULL), 
+                                 type="org"))
+vocab.md[2] <- gsub("[+]","|", vocab.md[2])
+
+vocab.md <- paste(vocab.md, collapse="\n")
+
+readme.file <- file('README.md', open="w")
+writeLines(base.readme, readme.file, sep="\n\n")
+writeLines(vocab.md, readme.file)
+close(readme.file)
+
+
