@@ -3,7 +3,7 @@ https://github.com/hadley/devtools/wiki/vocabulary,http://julialang.org/manual/s
 ?,help,Basics,First Functions
 str,,Basics,First Functions
 %in%,contains,Basics,Operators
-match,,Basics,Operators
+match,indexin,Basics,Operators
 =,=,Basics,Operators
 <-,=,Basics,Operators
 <<-,,Basics,Operators
