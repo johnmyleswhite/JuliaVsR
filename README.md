@@ -1,3 +1,5 @@
+# THIS REPO IS NOT MAINTAINED. THE DATA IN IT SHOULD BE CONSIDERED OUT OF DATE.
+
 Pieces of code that can be used to compare Julia and R side-by-side for speed and interpretability.
 
 | R                                   | Julia           | Category       | Subcategory                     |
