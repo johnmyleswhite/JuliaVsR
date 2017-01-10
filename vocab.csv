@@ -115,7 +115,7 @@ sweep,,Basics,Vectors and Matrices
 as.matrix,,Basics,Vectors and Matrices
 data.matrix,,Basics,Vectors and Matrices
 c,[] ({}),Basics,Making Vectors
-rep,,Basics,Making Vectors
+rep,[3.4 for i=1:4],Basics,Making Vectors
 seq,[from:by:to],Basics,Making Vectors
 seq_along,,Basics,Making Vectors
 seq_len,[1:len],Basics,Making Vectors
