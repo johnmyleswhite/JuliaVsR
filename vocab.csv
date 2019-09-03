@@ -251,10 +251,10 @@ load,,I/O,Reading and Writing Data
 save,,I/O,Reading and Writing Data
 readRDS,,I/O,Reading and Writing Data
 saveRDS,,I/O,Reading and Writing Data
-dir,,I/O,Files and Directories
+dir,readdir,I/O,Files and Directories
 basename,,I/O,Files and Directories
 dirname,,I/O,Files and Directories
-file.path,,I/O,Files and Directories
+file.path,joinpath,I/O,Files and Directories
 path.expand,,I/O,Files and Directories
 file.choose,,I/O,Files and Directories
 file.copy,,I/O,Files and Directories
