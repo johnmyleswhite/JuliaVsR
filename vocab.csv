@@ -117,6 +117,7 @@ data.matrix,,Basics,Vectors and Matrices
 c,[] ({}),Basics,Making Vectors
 rep,,Basics,Making Vectors
 seq,[from:by:to],Basics,Making Vectors
+seq(a,b,length.out=n),linspace(a,b,n),Basics,Making Vectors
 seq_along,,Basics,Making Vectors
 seq_len,[1:len],Basics,Making Vectors
 rev,reverse,Basics,Making Vectors
